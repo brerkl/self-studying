@@ -26,8 +26,8 @@ class LosgisticRegression:
             predictions = sigmoid(np.dot(X, self.weights) + self.bias)
 
             # Để cập nhật trọng số và bias mới, mình tính đạo hàm, hoặc độ dốc của sai số bình phương trung bình (MSE)
-            dw = (-2/n_samples) * np.dot(X.T, (y - predictions))
-            db = (-2/n_samples) * np.sum(y - predictions)
+            dw = (-1/n_samples) * np.dot(X.T, (y - predictions))
+            db = (-1/n_samples) * np.sum(y - predictions)
 
             # Sau khi tính đạo hàm của hàm mất mát, mình cập nhất trọng số (w) và bias (b) mới
             self.weights = self.weights - self.learning_rate*dw
